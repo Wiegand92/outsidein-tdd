@@ -1,47 +1,12 @@
-# React with TailwindCSS Boilerplate
+# Opinion-ate React
 
-## About
-
-This is a barebones boilerplate for react with TailwindCSS. It will help you with a quick setup to make a site.
-
-## Using this Repo
-
-### **Initial Setup**
-
-Tailwind can be a bit tricky to make work with your linter. To that end this project includes StyleLint, and you should install the stylelint plugin if you are using VSCode. The extension can be found [here](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint).
-
-### **Other Quirks**
-
-Tailwind can produce a very large CSS file if you don't set the purge options. That is enabled in this boilerplate, and any files that use tailwind should be added to the content array in tailwind.config.js.
-
-### **Actual Setup**
-
-1. Clone the repo 
-
-    ```git clone https://github.com/Wiegand92/react-tw```
-
-2. Change directories
-
-    ```cd react-tw```
-
-3. Remove git history
-
-    ```rm -rf .git```
-
-4. Start the express server 
-    
-    ```npm start```
-
-5. Start webpack dev server 
-
-   ```npm run start-dev```
-
-  This project uses webpack dev-server for live reloading. To use it you must have an instance of the express server running because webpack will try to proxy it to handle routes.
-
-5. Have fun!
+This is a site built to learn jest and cypress testing tools. The original tutorial is available [here](https://outsidein.dev/react/#tech-stack).
 
 ## Tech Included
 
+  **Testing**  
+  Cypress for E2E tests  
+  Jest for unit tests
 
   **Framework**
 
