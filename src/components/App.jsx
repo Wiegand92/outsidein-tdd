@@ -1,12 +1,13 @@
 import React from 'react';
+// App Imports //
+import RestaurantScreen from './RestaurantScreen';
+import RestaurantList from './RestaurantList';
 
-const App = () => {
-  return (
-      <div className="app">
-        <h1>Hello World!</h1>
-        <p>Check out the README <a href='https://github.com/Wiegand92/RegexSite'>here</a></p>
-      </div>
-  );
-};
+const App = () => (
+  <div className="app">
+    <RestaurantScreen />
+    <RestaurantList />
+  </div>
+);
 
 export default App;
