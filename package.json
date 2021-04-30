@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "node server.js & cross-env NODE_ENV=development webpack serve",
+    "start": "nodemon server.js & cross-env NODE_ENV=development webpack serve",
     "lint": "eslint src",
     "test": "jest",
     "cypress": "cypress open"
@@ -28,6 +28,7 @@
     "eslint-plugin-jest": "^24.3.6",
     "eslint-plugin-prettier": "^3.4.0",
     "mini-css-extract-plugin": "^1.4.1",
+    "nodemon": "^2.0.7",
     "postcss": "^8.2.10",
     "postcss-loader": "^5.2.0",
     "postcss-preset-env": "^6.7.0",
