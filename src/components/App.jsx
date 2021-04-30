@@ -7,8 +7,7 @@ import RestaurantScreen from './RestaurantScreen';
 
 const App = () => (
   <Provider className="app" store={store}>
-    <p>here</p>
-    {/* <RestaurantScreen /> */}
+    <RestaurantScreen />
   </Provider>
 );
 
