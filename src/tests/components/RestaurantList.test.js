@@ -1,5 +1,5 @@
 import {render} from '@testing-library/react';
-import {RestaurantList} from '../components/RestaurantList';
+import {RestaurantList} from '../../components/RestaurantList';
 import React from 'react';
 
 describe('RestaurantList', () => {
