@@ -77,7 +77,6 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, 'public'),
     hot: true,
-    proxy: {'/': 'http://localhost:4200'},
     publicPath: '/scripts/',
     watchContentBase: true,
   },
