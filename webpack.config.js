@@ -1,77 +1,85 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
 const path = require('path');
+require('dotenv').config();
 
 // In dev mode if env.NODE_ENV is developer //
 const devMode = process.env.NODE_ENV === 'development';
 
-const plugins = [new CleanWebpackPlugin()];
+const plugins = [
+  new CleanWebpackPlugin(),
+  new webpack.DefinePlugin({
+    'process.env.API_KEY': JSON.stringify(process.env.API_KEY),
+  }),
+];
 
 // Enable MiniCss in production only //
 if (!devMode) {
-  plugins.push(new MiniCssExtractPlugin({
-    filename:'style.css'
-  }));
+  plugins.push(
+    new MiniCssExtractPlugin({
+      filename: 'style.css',
+    }),
+  );
 }
 
-
 module.exports = {
-
   entry: './src/index.js',
 
   output: {
     filename: 'index.js',
-    path: path.resolve(__dirname, 'public/scripts')
+    path: path.resolve(__dirname, 'public/scripts'),
   },
 
   plugins,
 
   module: {
-    rules:[
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         resolve: {
-          extensions: ['.js', '.jsx']
+          extensions: ['.js', '.jsx'],
         },
         use: [
           {
-            loader: "source-map-loader"
+            loader: 'source-map-loader',
           },
           {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env', '@babel/preset-react'],
-              plugins: ['@babel/plugin-proposal-class-properties']
-            }
-          }
-        ]
+              plugins: ['@babel/plugin-proposal-class-properties'],
+            },
+          },
+        ],
       },
       {
         test: /\.s?css$/,
         use: [
           //If we're in dev-mode, use inline-styles, else extract to separate css file
-          devMode ? 'style-loader' : {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '/scripts/',
-            }
-          },
+          devMode
+            ? 'style-loader'
+            : {
+                loader: MiniCssExtractPlugin.loader,
+                options: {
+                  publicPath: '/scripts/',
+                },
+              },
           'css-loader',
           'postcss-loader',
-          "sass-loader",
-        ]
-      }
-    ]
+          'sass-loader',
+        ],
+      },
+    ],
   },
 
   devServer: {
     contentBase: path.resolve(__dirname, 'public'),
     hot: true,
-    proxy: {'/' : 'http://localhost:4200'},
     publicPath: '/scripts/',
-    watchContentBase: true
+    watchContentBase: true,
   },
 
-  devtool: 'cheap-module-source-map'
-}
+  devtool: 'cheap-module-source-map',
+};

@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "node server.js & cross-env NODE_ENV=development webpack serve",
+    "start": "cross-env NODE_ENV=development webpack serve",
     "lint": "eslint src",
-    "test": "jest",
+    "test": "jest --config ./jest.config.js",
     "cypress": "cypress open"
   },
   "author": "Deep_Thought",
@@ -32,6 +32,7 @@
     "postcss-loader": "^5.2.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.2.1",
+    "redux-devtools-extension": "^2.13.9",
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1",
     "source-map-loader": "^2.0.1",
@@ -44,13 +45,12 @@
   "dependencies": {
     "axios": "^0.21.1",
     "babel-eslint": "^10.1.0",
-    "cors": "^2.8.5",
     "cypress": "^7.2.0",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
     "jest": "^26.6.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
     "redux": "^4.1.0",
     "redux-thunk": "^2.3.0"
   }

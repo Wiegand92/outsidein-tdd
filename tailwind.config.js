@@ -1,9 +1,7 @@
 module.exports = {
   purge: {
     enabled: true,
-    content: [
-      './src/styles/components/_app.css'
-    ]
+    content: ['./src/styles/**'],
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -13,4 +11,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
+};
