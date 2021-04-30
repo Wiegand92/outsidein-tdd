@@ -7,7 +7,7 @@
     "build": "webpack --mode production",
     "start": "nodemon server.js & cross-env NODE_ENV=development webpack serve",
     "lint": "eslint src",
-    "test": "jest",
+    "test": "jest --config ./jest.config.js",
     "cypress": "cypress open"
   },
   "author": "Deep_Thought",
