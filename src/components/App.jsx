@@ -6,8 +6,8 @@ import store from '../store/store';
 import RestaurantScreen from './RestaurantScreen';
 
 const App = () => (
-  <Provider className="app" store={store}>
-    <RestaurantScreen />
+  <Provider store={store}>
+    <RestaurantScreen className="app" />
   </Provider>
 );
 

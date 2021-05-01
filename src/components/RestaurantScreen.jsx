@@ -6,8 +6,13 @@ const RestaurantScreen = () => {
 
   return (
     <div className="restaurant-screen">
-      <h2>Restaurants</h2>
-      <RestaurantList loadRestaurants={loadRestaurants} />
+      <header>
+        <h1>Opinion Ate</h1>
+      </header>
+
+      <div className="list">
+        <RestaurantList loadRestaurants={loadRestaurants} />
+      </div>
     </div>
   );
 };
