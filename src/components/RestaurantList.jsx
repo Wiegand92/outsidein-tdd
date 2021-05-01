@@ -11,6 +11,11 @@ export const RestaurantList = ({loadRestaurants, restaurants}) => {
     <div className="restaurant-list">
       <h2>Restaurants Here</h2>
       <ul>
+        <img
+          src="images/loading-indicator.svg"
+          data-testid="loading-indicator"
+          alt="progress spinner"
+        />
         {restaurants.map(restaurant => {
           return <li key={restaurant.id}>{restaurant.name}</li>;
         })}

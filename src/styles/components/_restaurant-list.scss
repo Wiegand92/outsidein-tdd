@@ -8,5 +8,12 @@
 
   ul{
     @apply list-inside list-disc ml-8;
+    @apply flex flex-col;
+  }
+
+  img{
+    @apply animate-spin-slow;
+    @apply place-self-center;
+    @apply h-10 w-10;
   }
 }
