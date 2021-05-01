@@ -9,7 +9,7 @@ export const RestaurantList = ({loadRestaurants, restaurants}) => {
 
   return (
     <div className="restaurant-list">
-      <h3>Restaurants Here</h3>
+      <h2>Restaurants Here</h2>
       <ul>
         {restaurants.map(restaurant => {
           return <li key={restaurant.id}>{restaurant.name}</li>;

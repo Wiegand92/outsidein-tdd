@@ -1,0 +1,19 @@
+.restaurant-screen{
+  @apply w-screen h-screen;
+  @apply flex flex-col;
+  @apply bg-gray-100;
+
+  header{
+    @apply h-14 bg-green-700 w-full;
+    @apply flex justify-end;
+  }
+
+  h1{
+    @apply text-4xl font-bold;
+    @apply pr-4 self-center;
+  }
+
+  .list{
+    @apply p-4 pt-0 h-full;
+  }
+}

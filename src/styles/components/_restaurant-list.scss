@@ -1,0 +1,12 @@
+.restaurant-list{
+  @apply bg-white pb-2 rounded-b-md rounded-bl-none shadow;
+
+  h2{
+    @apply text-2xl font-bold mb-4;
+    @apply bg-gray-200 py-2 pl-4;
+  }
+
+  ul{
+    @apply list-inside list-disc ml-8;
+  }
+}
