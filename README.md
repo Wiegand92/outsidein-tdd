@@ -72,22 +72,3 @@ This is a site built to learn jest and cypress testing tools. The original tutor
   mini-css-extract-plugin    
 
   - When we run webpack in production mode this will bundle all of our css and put it in /public/scripts/style.css.
-
-
-  **Server**
-
-  cross-env    
-
-  - Allows us to declare a .env variable. Used to determine if we are in developer mode or not so webpack knows how to handle our css files.
-
-  cors
-
-  - Cross origin resource sharing, in case you need to query a db or call an api.
-    
-  dotenv
-
-  - This allows us to read from a .env file if we need to declare sensitive variables and hide them from others.
-
-  express
-
-  - Server framework to make building our backend easier.
