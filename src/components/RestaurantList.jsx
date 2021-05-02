@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
 import {loadRestaurants} from '../store/restaurants/actions';
 
-export const RestaurantList = ({loadRestaurants, restaurants}) => {
+export const RestaurantList = ({loadRestaurants, restaurants, loading}) => {
   useEffect(() => {
     loadRestaurants();
   }, [loadRestaurants]);
@@ -11,11 +11,13 @@ export const RestaurantList = ({loadRestaurants, restaurants}) => {
     <div className="restaurant-list">
       <h2>Restaurants Here</h2>
       <ul>
-        <img
-          src="images/loading-indicator.svg"
-          data-testid="loading-indicator"
-          alt="progress spinner"
-        />
+        {loading && (
+          <img
+            src="images/loading-indicator.svg"
+            data-testid="loading-indicator"
+            alt="progress spinner"
+          />
+        )}
         {restaurants.map(restaurant => {
           return <li key={restaurant.id}>{restaurant.name}</li>;
         })}

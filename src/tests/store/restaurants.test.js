@@ -5,26 +5,30 @@ import {loadRestaurants} from '../../store/restaurants/actions';
 
 describe('restaurants', () => {
   describe('loadRestaurants action', () => {
-    it('stores the restaurants', async () => {
-      const records = [
-        {id: 1, name: 'Sushi Place'},
-        {id: 2, name: 'Pizza Place'},
-      ];
-      const api = {
-        loadRestaurants: () => Promise.resolve(records),
-      };
-      const initialState = {
-        records: [],
-      };
+    describe('while loading', () => {
+      (() => {})();
+    });
+    describe('when loading finishes', () => {
+      it('stores the restaurants', async () => {
+        const records = [
+          {id: 1, name: 'Sushi Place'},
+          {id: 2, name: 'Pizza Place'},
+        ];
+        const api = {
+          loadRestaurants: () => Promise.resolve(records),
+        };
+        const initialState = {
+          records: [],
+        };
+        const store = createStore(
+          restaurantsReducer,
+          initialState,
+          applyMiddleware(thunk.withExtraArgument(api)),
+        );
 
-      const store = createStore(
-        restaurantsReducer,
-        initialState,
-        applyMiddleware(thunk.withExtraArgument(api)),
-      );
-
-      await store.dispatch(loadRestaurants());
-      expect(store.getState().records).toEqual(records);
+        await store.dispatch(loadRestaurants());
+        expect(store.getState().records).toEqual(records);
+      });
     });
   });
 });
